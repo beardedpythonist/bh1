@@ -1,12 +1,19 @@
 from django.shortcuts import render
-# from .models import *
-#
-# def index(request):
-#     bbb = User.objects.all()
-#     ccc = GroupUsers.objects.all()
-#     www = Group.objects.all()
-#     context ={'bbb':  bbb, "ccc": ccc, 'www':www}
-#     return render(request, 'lesson/index.html', context )
-#
-#
-#
+from .models import *
+#  на шаблоне index.html можно протестить
+def index(request):
+    bbb = User.objects.all()
+    qqq = User.objects.select_related('feedback')
+
+    ttt = Group.objects.all()
+    www = Group.objects.select_related('audience')
+    rrr = Group.objects.select_related('course')
+
+    context ={'bbb': bbb, 'qqq': qqq, 'www':www, 'rrr': rrr, 'ttt': ttt}
+
+
+
+    return render(request, 'lesson/index.html', context)
+
+
+

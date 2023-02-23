@@ -5,21 +5,49 @@
     <title>  тест </title>
 </head>
 <body>
- <ul>
+  <table>
+      <tr><th> Имя</th>
+       <th>Фамилия  </th> &nbsp;
+      <th>емаил   &nbsp; &nbsp;&nbsp;&nbsp; </th>
+        <th> отзыв</th>
+          </tr>
     {% for b in bbb %}
-        <p>
-
-        </p>
-        <h4><li> {{ b.first_name}} &nbsp; </li>
-         {{ b.last_name}}&nbsp;
-         {{ b.number  }} &nbsp;
-         {{b.email}} {{b.password}} &nbsp;
-         {{ b.user_id}}
-            </h4>
-
-
- </ul>
+        <h1>
+         <tr> <td>{{ b.first_name}} &nbsp;</td>
+         <td>{{ b.last_name}}&nbsp;</td>
+         <td>{{ b.number  }} &nbsp;</td>
+         <td>{{b.email}} {{b.password}}           &nbsp;</td>
+         <td>{{ b.user_id}} </td>
+         <td>{{ b.feedback.text}} </td>
+         </tr>
+            </h1>
 {% endfor  %}
+ </table>
+
+
+
+  <table>
+      <tr><th> номер группы </th>
+         <th>   начало старта  </th>
+
+        <th> <h2> название курса   </h2>   </th>
+          </tr>
+    {% for b in ttt %}
+        <h1>
+         <tr> <td> номер группы {{ b.number}} &nbsp;</td>
+         <td>{{ b.date_start }}&nbsp;</td>
+
+         <td> аудитория  {{ b.audience.number }} </td>
+         <td>{{ b.course.name }} </td>
+         </tr>            </h1>
+
+{% endfor  %}
+ </table>
+
+
+
+
+
 
 
 
